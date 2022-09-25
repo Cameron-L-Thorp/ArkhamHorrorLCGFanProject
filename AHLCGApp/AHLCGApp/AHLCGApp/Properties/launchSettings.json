@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "AHLCGApp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "AHLCGApp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
