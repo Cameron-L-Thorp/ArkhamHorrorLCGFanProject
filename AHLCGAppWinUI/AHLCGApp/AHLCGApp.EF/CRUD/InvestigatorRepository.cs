@@ -12,30 +12,58 @@ namespace AHLCGApp.EF.CRUD
     {
         public void GetAllInvestigators()
         {
-            using (AHLCGDBContext context = new AHLCGDBContext(DbContextOptions<Investigator>))
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                List<Investigator> allInvestigators = context.Investigators.ToList();
             }
         }
 
         public void AddOrUpdateInvestigator(Investigator inv)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                if (InvestigatorExists(inv.Id))
+                {
+                    Investigator investigator = context.Investigators.Where(i => i.Id == inv.Id).SingleOrDefault();
+                    context.Update(investigator);
+                }
+                else
+                {
+                    Investigator newInvestigator = inv;
+                    context.Add(newInvestigator);
+                }
+                context.SaveChanges();
+            }
         }
 
         public void DeleteInvestigator(Investigator inv)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                Investigator investigator = context.Investigators.Where(i => i.Id == inv.Id).SingleOrDefault();
+                int id = investigator.Id;
+                DeleteInvestigator(id);
+            }
         }
 
         public void DeleteInvestigator(int id)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                Investigator cyaInvestigator = context.Investigators.Where(i => i.Id == id).SingleOrDefault();
+                context.Remove(cyaInvestigator);
+                context.SaveChanges();
+            }
         }
 
-        public void InvestigatorExists(int id)
+        public bool InvestigatorExists(int id)
         {
-            throw new NotImplementedException();
+            bool exists = false;
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                exists = context.Investigators.Any(i => i.Id == id);
+            }
+            return exists;
         }
     }
 }

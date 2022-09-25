@@ -29,7 +29,7 @@ namespace AHLCGApp.EF.CRUD
             throw new NotImplementedException();
         }
 
-        public void AssetExists(int id)
+        public bool AssetExists(int id)
         {
             throw new NotImplementedException();
         }
