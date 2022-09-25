@@ -13,7 +13,7 @@ namespace AHLCGApp.EF.CRUD
         public void AddOrUpdateAsset(Asset asset);
         public void DeleteAsset(Asset asset);
         public void DeleteAsset(int id);
-        public void AssetExists(int id);
+        public bool AssetExists(int id);
 
     }
 }

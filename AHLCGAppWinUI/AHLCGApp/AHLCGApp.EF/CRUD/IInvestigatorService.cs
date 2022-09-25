@@ -13,6 +13,6 @@ namespace AHLCGApp.EF.CRUD
         public void AddOrUpdateInvestigator(Investigator inv);
         public void DeleteInvestigator(Investigator inv);
         public void DeleteInvestigator(int id);
-        public void InvestigatorExists(int id);
+        public bool InvestigatorExists(int id);
     }
 }
