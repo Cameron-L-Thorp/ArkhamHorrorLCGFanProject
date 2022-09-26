@@ -23,4 +23,10 @@
     <ProjectReference Include="..\AHLCGApp.Domain\AHLCGApp.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="AHLCGApp.Domain">
+      <HintPath>..\AHLCGApp.Domain\obj\Debug\net6.0\AHLCGApp.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
