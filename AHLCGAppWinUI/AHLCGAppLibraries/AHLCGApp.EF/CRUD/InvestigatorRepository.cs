@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AHLCGApp.EF.CRUD
 {
-    internal class InvestigatorRepository : IInvestigatorService
+    public class InvestigatorRepository : IInvestigatorService
     {
         public void GetAllInvestigators()
         {

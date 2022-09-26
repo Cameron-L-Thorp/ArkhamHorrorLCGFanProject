@@ -22,5 +22,6 @@
         <TextBox AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Elder Sign Ability"></TextBox>
         <NumberBox x:Name="HealthValue" Header="Starting Health" Value="NaN" PlaceholderText="Health"/>
         <NumberBox x:Name="SanityValue" Header="Starting Sanity" Value="NaN" PlaceholderText="Sanity"/>
+        <Button Content="Add Investigator" Click="ButtonBase_OnClick"/>
     </StackPanel>
 </Window>
