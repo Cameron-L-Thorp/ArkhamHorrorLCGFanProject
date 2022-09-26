@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -23,16 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.9">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
     <Manifest Include="$(ApplicationManifest)" />
@@ -47,8 +37,12 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AHLCGApp.Domain\AHLCGApp.Domain.csproj" />
-    <ProjectReference Include="..\AHLCGApp.EF\AHLCGApp.EF.csproj" />
+    <Reference Include="AHLCGApp.Domain">
+      <HintPath>..\..\..\AHLCGAppLibraries\AHLCGApp.Domain\obj\Debug\net6.0\AHLCGApp.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="AHLCGApp.EF">
+      <HintPath>..\..\..\AHLCGAppLibraries\AHLCGApp.EF\obj\Debug\net6.0\AHLCGApp.EF.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <!-- 

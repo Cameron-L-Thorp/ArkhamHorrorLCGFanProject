@@ -1,0 +1,21 @@
+﻿<Window
+    x:Class="AHLCGApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AHLCGApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        
+        <ComboBox ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Primary Class"/>
+        <ComboBox ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Secondary Class"/>
+        <NumberBox x:Name="WillpowerValue" Header="Willpower" Value="NaN" PlaceholderText="Willpower"/>
+        <NumberBox x:Name="IntellectValue" Header="Intellect" Value="NaN" PlaceholderText="Intellect"/>
+        <NumberBox x:Name="CombatValue" Header="Combat" Value="NaN" PlaceholderText="Combat"/>
+        <NumberBox x:Name="AgilityValue" Header="Agility" Value="NaN" PlaceholderText="Agility"/>
+        <NumberBox x:Name="HealthValue" Header="Starting Health" Value="NaN" PlaceholderText="Health"/>
+        <NumberBox x:Name="SanityValue" Header="Starting Sanity" Value="NaN" PlaceholderText="Sanity"/>
+    </StackPanel>
+</Window>
