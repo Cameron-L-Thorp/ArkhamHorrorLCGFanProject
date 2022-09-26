@@ -1,4 +1,5 @@
-﻿using Microsoft.UI.Xaml;
+﻿using AHLCGApp.Domain.Models;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Claims;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -23,14 +25,10 @@ namespace AHLCGApp
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        public List<ClassTypes> ClassTypesList = Enum.GetValues(typeof(ClassTypes)).Cast<ClassTypes>().ToList();
         public MainWindow()
         {
             this.InitializeComponent();
-        }
-
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
         }
     }
 }
