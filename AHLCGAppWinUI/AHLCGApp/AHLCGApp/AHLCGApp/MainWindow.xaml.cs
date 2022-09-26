@@ -14,6 +14,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Claims;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using AHLCGApp.EF.CRUD;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -29,6 +30,11 @@ namespace AHLCGApp
         public MainWindow()
         {
             this.InitializeComponent();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            //InvestigatorRepository
         }
     }
 }

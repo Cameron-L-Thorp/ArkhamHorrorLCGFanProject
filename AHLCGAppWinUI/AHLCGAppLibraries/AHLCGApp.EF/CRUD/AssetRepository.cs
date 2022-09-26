@@ -7,7 +7,7 @@ using AHLCGApp.Domain.Models;
 
 namespace AHLCGApp.EF.CRUD
 {
-    internal class AssetRepository : IAssetService
+    public class AssetRepository : IAssetService
     {
         public void GetAllAssets()
         {
