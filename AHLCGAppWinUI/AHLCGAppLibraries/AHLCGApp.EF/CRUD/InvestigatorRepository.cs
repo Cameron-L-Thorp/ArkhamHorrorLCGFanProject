@@ -10,7 +10,7 @@ namespace AHLCGApp.EF.CRUD
 {
     public class InvestigatorRepository : IInvestigatorService
     {
-        public void GetAllInvestigators()
+        public static void GetAllInvestigators()
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
@@ -18,7 +18,7 @@ namespace AHLCGApp.EF.CRUD
             }
         }
 
-        public void AddOrUpdateInvestigator(Investigator inv)
+        public static void AddOrUpdateInvestigator(Investigator inv)
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
@@ -33,10 +33,11 @@ namespace AHLCGApp.EF.CRUD
                     context.Add(newInvestigator);
                 }
                 context.SaveChanges();
+                
             }
         }
 
-        public void DeleteInvestigator(Investigator inv)
+        public static void DeleteInvestigator(Investigator inv)
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
@@ -46,7 +47,7 @@ namespace AHLCGApp.EF.CRUD
             }
         }
 
-        public void DeleteInvestigator(int id)
+        public static void DeleteInvestigator(int id)
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
@@ -56,7 +57,7 @@ namespace AHLCGApp.EF.CRUD
             }
         }
 
-        public bool InvestigatorExists(int id)
+        public static bool InvestigatorExists(int id)
         {
             bool exists = false;
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))

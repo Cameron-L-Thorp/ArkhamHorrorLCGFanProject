@@ -40,8 +40,20 @@ namespace AHLCGApp
             Investigator inv = new Investigator();
             inv.Name = InvName.Text;
             inv.Subtitle = SubtitleName.Text;
-            inv.ClassType = ClassTypesList[PClass.Text];
-            inv.SecondaryClassType = ClassTypesList[SClass.Text];
+            inv.ClassType = PClass.Text;
+            inv.SecondaryClassType = SClass.Text;
+            inv.FlavorText = Flavor.Text;
+            inv.MaxHealth = Convert.ToInt32(HealthValue.Text);
+            inv.MaxSanity = Convert.ToInt32(SanityValue.Value);
+            inv.Willpower = Convert.ToInt32(WillpowerValue.Text);
+            inv.Intellect = Convert.ToInt32(IntellectValue.Value);
+            inv.Combat = Convert.ToInt32(CombatValue.Value);
+            inv.Agility = Convert.ToInt32(AgilityValue.Value);
+            inv.TraitOne = FTrait.Text;
+            inv.AbilityOne = FAbility.Text;
+            inv.ElderSignAbility = ESAbility.Text;
+            inv.DeckSize = 30;
+            AddOrUpdateInvestigator(inv);
         }
     }
 }

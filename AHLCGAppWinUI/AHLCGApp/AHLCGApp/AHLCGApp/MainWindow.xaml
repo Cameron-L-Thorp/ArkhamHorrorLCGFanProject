@@ -13,13 +13,14 @@
         <TextBox x:Name="SubtitleName" PlaceholderText="Investigator Subtitle"/>
         <ComboBox x:Name="PClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Primary Class"/>
         <ComboBox x:Name="SClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Secondary Class"/>
+        <TextBox x:Name="Flavor" AutomationProperties.Name="multi-line TextBox" PlaceholderText="Flavor Text" MinWidth="400" TextWrapping="Wrap" IsSpellCheckEnabled="True"/>
         <NumberBox x:Name="WillpowerValue" Header="Willpower" Value="NaN" PlaceholderText="Willpower"/>
         <NumberBox x:Name="IntellectValue" Header="Intellect" Value="NaN" PlaceholderText="Intellect"/>
         <NumberBox x:Name="CombatValue" Header="Combat" Value="NaN" PlaceholderText="Combat"/>
         <NumberBox x:Name="AgilityValue" Header="Agility" Value="NaN" PlaceholderText="Agility"/>
-        <TextBox PlaceholderText="First Trait"/>
-        <TextBox AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="First Ability"></TextBox>
-        <TextBox AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Elder Sign Ability"></TextBox>
+        <TextBox x:Name="FTrait" PlaceholderText="First Trait"/>
+        <TextBox x:Name="FAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="First Ability"></TextBox>
+        <TextBox x:Name="ESAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Elder Sign Ability"></TextBox>
         <NumberBox x:Name="HealthValue" Header="Starting Health" Value="NaN" PlaceholderText="Health"/>
         <NumberBox x:Name="SanityValue" Header="Starting Sanity" Value="NaN" PlaceholderText="Sanity"/>
         <Button Content="Add Investigator" Click="ButtonBase_OnClick"/>
