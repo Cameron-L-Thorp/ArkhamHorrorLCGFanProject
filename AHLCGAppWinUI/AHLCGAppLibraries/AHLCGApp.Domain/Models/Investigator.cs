@@ -25,6 +25,7 @@ namespace AHLCGApp.Domain.Models
         [StringLength(maximumLength: 10)]
         public string SecondaryClassType { get; set; }
         [AllowNull]
+        [StringLength(maximumLength: 1000)]
         public string FlavorText { get; set; }
         [Required]
         public int MaxHealth { get; set; }
