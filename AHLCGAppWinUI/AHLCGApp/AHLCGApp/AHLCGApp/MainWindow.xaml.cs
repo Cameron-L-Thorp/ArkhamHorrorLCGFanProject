@@ -15,6 +15,8 @@ using System.Security.Claims;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using AHLCGApp.EF.CRUD;
+using AHLCGApp.Domain.Models;
+using AHLCGApp.Domain;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -27,14 +29,19 @@ namespace AHLCGApp
     public sealed partial class MainWindow : Window
     {
         public List<ClassTypes> ClassTypesList = Enum.GetValues(typeof(ClassTypes)).Cast<ClassTypes>().ToList();
+        
         public MainWindow()
         {
             this.InitializeComponent();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        public void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            //InvestigatorRepository
+            Investigator inv = new Investigator();
+            inv.Name = InvName.Text;
+            inv.Subtitle = SubtitleName.Text;
+            inv.ClassType = ClassTypesList[PClass.Text];
+            inv.SecondaryClassType = ClassTypesList[SClass.Text];
         }
     }
 }
