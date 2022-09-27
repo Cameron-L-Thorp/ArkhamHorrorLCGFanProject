@@ -16,9 +16,14 @@ namespace AHLCGApp.Domain.Models
         [StringLength(maximumLength: 50)]
         public string Name { get; set; }
         [Required]
-        public int ClassType { get; set; }
+        [StringLength(maximumLength: 50)]
+        public string Subtitle { get; set; }
         [Required]
-        public int SecondaryClassType { get; set; }
+        [StringLength(maximumLength: 10)]
+        public string ClassType { get; set; }
+        [Required]
+        [StringLength(maximumLength: 10)]
+        public string SecondaryClassType { get; set; }
         [AllowNull]
         public string FlavorText { get; set; }
         [Required]

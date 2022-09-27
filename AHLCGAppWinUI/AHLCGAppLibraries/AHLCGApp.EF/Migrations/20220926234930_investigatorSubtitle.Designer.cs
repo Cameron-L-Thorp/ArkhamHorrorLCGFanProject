@@ -3,6 +3,7 @@ using AHLCGApp.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AHLCGApp.EF.Migrations
 {
     [DbContext(typeof(AHLCGDBContext))]
-    partial class AHLCGDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220926234930_investigatorSubtitle")]
+    partial class investigatorSubtitle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,10 +133,8 @@ namespace AHLCGApp.EF.Migrations
                     b.Property<int>("Agility")
                         .HasColumnType("int");
 
-                    b.Property<string>("ClassType")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<int>("ClassType")
+                        .HasColumnType("int");
 
                     b.Property<int>("Combat")
                         .HasColumnType("int");
@@ -165,10 +165,8 @@ namespace AHLCGApp.EF.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("SecondaryClassType")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<int>("SecondaryClassType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Subtitle")
                         .IsRequired()

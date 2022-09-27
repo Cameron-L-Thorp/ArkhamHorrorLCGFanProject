@@ -9,10 +9,10 @@
 
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
         
-        <TextBox PlaceholderText="Investigator Name"/>
-        <TextBox PlaceholderText="Investigator Subtitle"/>
-        <ComboBox ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Primary Class"/>
-        <ComboBox ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Secondary Class"/>
+        <TextBox x:Name="InvName" PlaceholderText="Investigator Name"/>
+        <TextBox x:Name="SubtitleName" PlaceholderText="Investigator Subtitle"/>
+        <ComboBox x:Name="PClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Primary Class"/>
+        <ComboBox x:Name="SClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Secondary Class"/>
         <NumberBox x:Name="WillpowerValue" Header="Willpower" Value="NaN" PlaceholderText="Willpower"/>
         <NumberBox x:Name="IntellectValue" Header="Intellect" Value="NaN" PlaceholderText="Intellect"/>
         <NumberBox x:Name="CombatValue" Header="Combat" Value="NaN" PlaceholderText="Combat"/>
