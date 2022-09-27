@@ -9,10 +9,28 @@ namespace AHLCGApp.EF.CRUD
 {
     public interface IInvestigatorService
     {
-        public void GetAllInvestigators();
-        public void AddOrUpdateInvestigator(Investigator inv);
-        public void DeleteInvestigator(Investigator inv);
-        public void DeleteInvestigator(int id);
-        public bool InvestigatorExists(int id);
+        public static void GetAllInvestigators()
+        {
+
+        }
+        public static void AddOrUpdateInvestigator(Investigator inv)
+        {
+
+        }
+
+        public static void DeleteInvestigator(Investigator inv)
+        {
+
+        }
+
+        public static void DeleteInvestigator(int id)
+        {
+
+        }
+
+        public static bool InvestigatorExists(int id)
+        {
+            return false;
+        }
     }
 }
