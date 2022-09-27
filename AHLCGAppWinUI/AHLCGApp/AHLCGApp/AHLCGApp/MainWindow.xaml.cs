@@ -37,11 +37,13 @@ namespace AHLCGApp
 
         public void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
+            string pClass = PClass.Text;
+            string sClass = SClass.Text;
             Investigator inv = new Investigator();
             inv.Name = InvName.Text;
             inv.Subtitle = SubtitleName.Text;
-            inv.ClassType = PClass.Text;
-            inv.SecondaryClassType = SClass.Text;
+            inv.ClassType = pClass;
+            inv.SecondaryClassType = sClass;
             inv.FlavorText = Flavor.Text;
             inv.MaxHealth = Convert.ToInt32(HealthValue.Text);
             inv.MaxSanity = Convert.ToInt32(SanityValue.Value);
@@ -53,7 +55,8 @@ namespace AHLCGApp
             inv.AbilityOne = FAbility.Text;
             inv.ElderSignAbility = ESAbility.Text;
             inv.DeckSize = 30;
-            AddOrUpdateInvestigator(inv);
+            InvestigatorRepository invRepo = new InvestigatorRepository();
+            invRepo.AddOrUpdateInvestigator(inv);
         }
     }
 }
