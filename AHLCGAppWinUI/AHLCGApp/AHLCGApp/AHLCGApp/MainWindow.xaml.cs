@@ -35,7 +35,7 @@ namespace AHLCGApp
             this.InitializeComponent();
         }
 
-        public void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        public void AddInv_OnClick(object sender, RoutedEventArgs e)
         {
             string pClass = PClass.Text;
             string sClass = SClass.Text;
@@ -44,7 +44,6 @@ namespace AHLCGApp
             inv.Subtitle = SubtitleName.Text;
             inv.ClassType = pClass;
             inv.SecondaryClassType = sClass;
-            inv.FlavorText = Flavor.Text;
             inv.MaxHealth = Convert.ToInt32(HealthValue.Text);
             inv.MaxSanity = Convert.ToInt32(SanityValue.Value);
             inv.Willpower = Convert.ToInt32(WillpowerValue.Text);
@@ -55,8 +54,34 @@ namespace AHLCGApp
             inv.AbilityOne = FAbility.Text;
             inv.ElderSignAbility = ESAbility.Text;
             inv.DeckSize = 30;
+            if (Flavor.Text != null)
+            {
+                inv.FlavorText = Flavor.Text;
+            }
+            if (STrait.Text != null)
+            {
+                inv.TraitTwo = STrait.Text;
+            }
+            if (TdTrait.Text != null)
+            {
+                inv.TraitThree = TdTrait.Text;
+            }
+            if (SAbility.Text != null)
+            {
+                inv.AbilityTwo = SAbility.Text;
+            }
+            if (TdAbility.Text != null)
+            {
+                inv.AbilityThree = TdAbility.Text;
+            }
             InvestigatorRepository invRepo = new InvestigatorRepository();
             invRepo.AddOrUpdateInvestigator(inv);
+            this.InitializeComponent();
+        }
+
+        private void DontAddInv_OnClick(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
