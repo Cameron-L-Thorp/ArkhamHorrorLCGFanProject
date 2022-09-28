@@ -78,7 +78,7 @@
             <Button.Flyout>
                 <Flyout>
                     <StackPanel>
-                        <TextBox Text="Would you like to add this entry as a new invstigator?"/>
+                        <TextBlock Text="Would you like to add this entry as a new investigator?"/>
                         <Button Click="AddInv_OnClick" Content="Add"/>
                         <Button Click="DontAddInv_OnClick" Content="Cancel"/>
                     </StackPanel>
