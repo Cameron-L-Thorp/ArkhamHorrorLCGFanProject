@@ -37,8 +37,8 @@ namespace AHLCGApp
 
         public void AddInv_OnClick(object sender, RoutedEventArgs e)
         {
-            string pClass = PClass.Text;
-            string sClass = SClass.Text;
+            string pClass = PClass.SelectedValue.ToString();
+            string sClass = SClass.SelectedValue.ToString();
             Investigator inv = new Investigator();
             inv.Name = InvName.Text;
             inv.Subtitle = SubtitleName.Text;
@@ -75,7 +75,7 @@ namespace AHLCGApp
                 inv.AbilityThree = TdAbility.Text;
             }
             InvestigatorRepository invRepo = new InvestigatorRepository();
-            invRepo.AddOrUpdateInvestigator(inv);
+            InvestigatorRepository.AddOrUpdateInvestigator(inv);
             this.InitializeComponent();
         }
 
