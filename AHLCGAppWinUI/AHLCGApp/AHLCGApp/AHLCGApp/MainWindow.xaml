@@ -26,7 +26,7 @@
 
         </Grid>
     </DataTemplate>-->
-    <Grid x:Name="InvestigatorGrid">
+    <!--<Grid x:Name="InvestigatorGrid">
         <Grid.ColumnDefinitions >
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -85,7 +85,7 @@
                 </Flyout>
             </Button.Flyout>
         </Button>
-    </Grid>
+    </Grid>-->
 
         
     <!--</StackPanel>-->
