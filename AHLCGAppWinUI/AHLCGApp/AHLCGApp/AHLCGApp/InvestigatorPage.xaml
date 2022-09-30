@@ -7,8 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Pivot Title="Arkham Horror Living Card Game Fan Project">
-        <PivotItem Header="Investigators">
+    <NavigationView x:Name="AHNav" PaneDisplayMode="Top">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Investigators" Tag="InvestigatorGrid"/>
+            <NavigationViewItem Content="Assets" Tag="AssetsGrid"/>
+            <NavigationViewItem Content="Enemies/Treacheries"/>
+            <NavigationViewItem Content="Locations"/>
+            <NavigationViewItem Content="Acts/Agendas"/>
+        </NavigationView.MenuItems>
+        
+        <Frame x:Name="AHContentFrame">
             <Grid x:Name="InvestigatorGrid" >
                 <Grid.ColumnDefinitions >
                     <ColumnDefinition Width="*"/>
@@ -70,15 +78,12 @@
                     </Button.Flyout>
                 </Button>
             </Grid>
-        </PivotItem>
-        <PivotItem Header="Assets">
-            <RadioButtons Header="AssetTypes">
-                <RadioButton Content="Asset" Checked="Asset_Checked"/>
-                <RadioButton Content="Event" Checked="Asset_Checked"/>
-                <RadioButton Content="Skill" Checked="Asset_Checked"/>
-                <RadioButton Content="Weakness" Checked="Asset_Checked"/>
-            </RadioButtons>
-        </PivotItem>
-    </Pivot>
+        </Frame>
+        
+    </NavigationView>
+            
+        
+            
+
     
 </Page>
