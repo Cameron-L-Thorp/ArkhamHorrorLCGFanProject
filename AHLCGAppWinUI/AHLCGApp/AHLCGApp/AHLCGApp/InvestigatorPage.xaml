@@ -7,65 +7,78 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid x:Name="InvestigatorGrid">
-        <Grid.ColumnDefinitions >
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBox x:Name="InvName" PlaceholderText="Investigator Name" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Margin="10,0,10,0"/>
-        <TextBox x:Name="SubtitleName" PlaceholderText="Investigator Subtitle" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="10,0,10,0"/>
-        <ComboBox x:Name="PClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Primary Class" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Margin="10,0,10,0" HorizontalAlignment="Right"/>
-        <ComboBox x:Name="SClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Secondary Class" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Margin="10,0,10,0" HorizontalAlignment="Left"/>
-        <TextBox x:Name="Flavor" AutomationProperties.Name="multi-line TextBox" PlaceholderText="Flavor Text" MinWidth="400" TextWrapping="Wrap" IsSpellCheckEnabled="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" Grid.RowSpan="3" Margin="10,0,10,0"/>
-        <NumberBox x:Name="WillpowerValue" Header="Willpower" Value="NaN" PlaceholderText="Willpower" Grid.Column="5" Grid.Row="1" Margin="10,0,10,0"/>
-        <NumberBox x:Name="IntellectValue" Header="Intellect" Value="NaN" PlaceholderText="Intellect" Grid.Column="6" Grid.Row="1" Margin="10,0,10,0"/>
-        <NumberBox x:Name="CombatValue" Header="Combat" Value="NaN" PlaceholderText="Combat" Grid.Column="7" Grid.Row="1" Margin="10,0,10,0"/>
-        <NumberBox x:Name="AgilityValue" Header="Agility" Value="NaN" PlaceholderText="Agility" Grid.Column="8" Grid.Row="1" Margin="10,0,10,0"/>
-        <TextBox x:Name="FTrait" PlaceholderText="First Trait" Grid.Column="5" Grid.Row="2" Margin="10,0,10,0"/>
-        <TextBox x:Name="STrait" PlaceholderText="Second Trait" Grid.Column="6" Grid.Row="2" Margin="10,0,10,0"/>
-        <TextBox x:Name="TdTrait" PlaceholderText="Third Trait" Grid.Column="7" Grid.Row="2" Margin="10,0,10,0"/>
-        <TextBox x:Name="FAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="First Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="3" Grid.RowSpan="2" Margin="10,0,10,0"/>
-        <TextBox x:Name="SAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Second Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="5" Grid.RowSpan="2" Margin="10,0,10,0"/>
-        <TextBox x:Name="TdAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Third Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="7" Grid.RowSpan="2" Margin="10,0,10,0"/>
-        <TextBox x:Name="ESAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Elder Sign Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="9" Grid.RowSpan="2" Margin="10,0,10,0"/>
-        <NumberBox x:Name="HealthValue" Header="Starting Health" Value="NaN" PlaceholderText="Health" Grid.Column="6" Grid.Row="11" Grid.RowSpan="2" Margin="10,0,10,0"/>
-        <NumberBox x:Name="SanityValue" Header="Starting Sanity" Value="NaN" PlaceholderText="Sanity" Grid.Column="7" Grid.Row="11" Grid.RowSpan="2" Margin="10,0,10,0"/>
-        <Button Content="Add Investigator" Grid.Column="8" Grid.ColumnSpan="2" Grid.Row="13" HorizontalAlignment="Center">
-            <Button.Flyout>
-                <Flyout>
-                    <StackPanel>
-                        <TextBlock Text="Would you like to add this entry as a new investigator?"/>
-                        <Button Click="AddInv_OnClick" Content="Add"/>
-                        <Button Click="DontAddInv_OnClick" Content="Cancel"/>
-                    </StackPanel>
-                </Flyout>
-            </Button.Flyout>
-        </Button>
-    </Grid>
+    <Pivot Title="Arkham Horror Living Card Game Fan Project">
+        <PivotItem Header="Investigators">
+            <Grid x:Name="InvestigatorGrid" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="InvName" PlaceholderText="Investigator Name" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Margin="10,0,10,0"/>
+                <TextBox x:Name="SubtitleName" PlaceholderText="Investigator Subtitle" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="10,0,10,0"/>
+                <ComboBox x:Name="PClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Primary Class" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Margin="10,0,10,0" HorizontalAlignment="Right"/>
+                <ComboBox x:Name="SClass" ItemsSource="{x:Bind ClassTypesList}" PlaceholderText="Secondary Class" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" Margin="10,0,10,0" HorizontalAlignment="Left"/>
+                <TextBox x:Name="Flavor" AutomationProperties.Name="multi-line TextBox" PlaceholderText="Flavor Text" MinWidth="400" TextWrapping="Wrap" IsSpellCheckEnabled="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" Grid.RowSpan="3" Margin="10,0,10,0"/>
+                <NumberBox x:Name="WillpowerValue" Header="Willpower" Value="NaN" PlaceholderText="Willpower" Grid.Column="5" Grid.Row="1" Margin="10,0,10,0"/>
+                <NumberBox x:Name="IntellectValue" Header="Intellect" Value="NaN" PlaceholderText="Intellect" Grid.Column="6" Grid.Row="1" Margin="10,0,10,0"/>
+                <NumberBox x:Name="CombatValue" Header="Combat" Value="NaN" PlaceholderText="Combat" Grid.Column="7" Grid.Row="1" Margin="10,0,10,0"/>
+                <NumberBox x:Name="AgilityValue" Header="Agility" Value="NaN" PlaceholderText="Agility" Grid.Column="8" Grid.Row="1" Margin="10,0,10,0"/>
+                <TextBox x:Name="FTrait" PlaceholderText="First Trait" Grid.Column="5" Grid.Row="2" Margin="10,0,10,0"/>
+                <TextBox x:Name="STrait" PlaceholderText="Second Trait" Grid.Column="6" Grid.Row="2" Margin="10,0,10,0"/>
+                <TextBox x:Name="TdTrait" PlaceholderText="Third Trait" Grid.Column="7" Grid.Row="2" Margin="10,0,10,0"/>
+                <TextBox x:Name="FAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="First Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="3" Grid.RowSpan="2" Margin="10,0,10,0"/>
+                <TextBox x:Name="SAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Second Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="5" Grid.RowSpan="2" Margin="10,0,10,0"/>
+                <TextBox x:Name="TdAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Third Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="7" Grid.RowSpan="2" Margin="10,0,10,0"/>
+                <TextBox x:Name="ESAbility" AutomationProperties.Name="multi-line TextBox" TextWrapping="Wrap" MinWidth="400" IsSpellCheckEnabled="True" PlaceholderText="Elder Sign Ability" Grid.Column="5" Grid.ColumnSpan="4" Grid.Row="9" Grid.RowSpan="2" Margin="10,0,10,0"/>
+                <NumberBox x:Name="HealthValue" Header="Starting Health" Value="NaN" PlaceholderText="Health" Grid.Column="6" Grid.Row="11" Grid.RowSpan="2" Margin="10,0,10,0"/>
+                <NumberBox x:Name="SanityValue" Header="Starting Sanity" Value="NaN" PlaceholderText="Sanity" Grid.Column="7" Grid.Row="11" Grid.RowSpan="2" Margin="10,0,10,0"/>
+                <Button Content="Add Investigator" Grid.Column="8" Grid.ColumnSpan="2" Grid.Row="13" HorizontalAlignment="Center">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel>
+                                <TextBlock Text="Would you like to add this entry as a new investigator?"/>
+                                <Button x:Name="ConfirmInv" Click="AddInv_OnClick" Content="Add"/>
+                                <Button x:Name="ClearInv" Click="DontAddInv_OnClick" Content="Clear"/>
+                                <TextBlock Text="(Click away from this box to cancel)"/>
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+            </Grid>
+        </PivotItem>
+        <PivotItem Header="Assets">
+            <RadioButtons Header="AssetTypes">
+                <RadioButton Content="Asset" Checked="Asset_Checked"/>
+                <RadioButton Content="Event" Checked="Asset_Checked"/>
+                <RadioButton Content="Skill" Checked="Asset_Checked"/>
+                <RadioButton Content="Weakness" Checked="Asset_Checked"/>
+            </RadioButtons>
+        </PivotItem>
+    </Pivot>
+    
 </Page>
