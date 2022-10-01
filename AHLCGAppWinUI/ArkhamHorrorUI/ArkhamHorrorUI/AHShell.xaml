@@ -1,0 +1,61 @@
+﻿<Window
+    x:Class="ArkhamHorrorUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ArkhamHorrorUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <NavigationView x:Name="ArkhamHorrorNav"
+                    IsSettingsVisible="false"
+                    Loaded="ArkhamHorrorNav_Loaded"
+                    SelectionChanged="NavigationView_SelectionChanged"
+                    Header="Arkham Horror LCG Helper"
+                    IsBackButtonVisible="Collapsed"
+                    PaneDisplayMode="top">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="Investigators"
+                                Tag="XamlBrewer.WinUI3.Navigation.Sample.Views.InvestigatorPage"
+                                ToolTipService.ToolTip="Investigator">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="/Assets/InvestigatorIcon.png"
+                                ShowAsMonochrome="false"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Assets"
+                                Tag="XamlBrewer.WinUI3.Navigation.Sample.Views.AssetsPage"
+                                ToolTipService.ToolTip="Asset">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="/Assets/InvestigatorIcon.png"
+                                ShowAsMonochrome="false"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Enemies"
+                                Tag="XamlBrewer.WinUI3.Navigation.Sample.Views.EnemiesPage"
+                                ToolTipService.ToolTip="Enemy">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="/Assets/InvestigatorIcon.png"
+                                ShowAsMonochrome="false"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Locations"
+                                Tag="XamlBrewer.WinUI3.Navigation.Sample.Views.LocationsPage"
+                                ToolTipService.ToolTip="Location">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="/Assets/InvestigatorIcon.png"
+                                ShowAsMonochrome="false"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+            <NavigationViewItem Content="Acts/Agendas"
+                                Tag="XamlBrewer.WinUI3.Navigation.Sample.Views.EventsPage"
+                                ToolTipService.ToolTip="Event">
+                <NavigationViewItem.Icon>
+                    <BitmapIcon UriSource="/Assets/InvestigatorIcon.png"
+                                ShowAsMonochrome="false"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+        <Frame x:Name="ContentFrame"/>
+    </NavigationView>
+</Window>
