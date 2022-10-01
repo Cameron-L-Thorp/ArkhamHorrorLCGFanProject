@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ArkhamHorrorUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ArkhamHorrorUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
