@@ -12,7 +12,7 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="InvestigatorPage.xaml" />
+    <None Remove="Views\InvestigatorPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,8 +51,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="InvestigatorPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 
   <!-- 
