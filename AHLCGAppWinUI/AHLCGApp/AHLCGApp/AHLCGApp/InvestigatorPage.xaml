@@ -11,7 +11,7 @@
         <NavigationView.MenuItems>
             <NavigationViewItem Content="Investigators" Tag="InvestigatorGrid"/>
             <NavigationViewItem Content="Assets" Tag="AssetsGrid"/>
-            <NavigationViewItem Content="Enemies/Treacheries"/>
+            <NavigationViewItem Content="Enemies/Treacheries" Tag="EnemiesGrid"/>
             <NavigationViewItem Content="Locations"/>
             <NavigationViewItem Content="Acts/Agendas"/>
         </NavigationView.MenuItems>
