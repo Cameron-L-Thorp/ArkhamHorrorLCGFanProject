@@ -12,17 +12,33 @@ namespace AHLCGApp.EF.CRUD
     {
         public void AddOrUpdateTrechery(Trechery trechery)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                if (TrecheryExists(trechery.Id))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public void DeleteTrechery(Trechery trechery)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void DeleteTrechery(int id)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void GetAllTrecheries()

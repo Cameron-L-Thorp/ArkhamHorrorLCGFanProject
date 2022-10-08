@@ -12,17 +12,33 @@ namespace AHLCGApp.EF.CRUD
     {
         public void AddOrUpdateLocation(Location location)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                if (LocationExists(location.Id))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public void DeleteLocation(Location locaiton)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void DeleteLocation(int id)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void GetAllLocations()
