@@ -18,6 +18,11 @@ namespace AHLCGApp.EF
         }
         public virtual DbSet<Investigator> Investigators { get; set; }
         public virtual DbSet<Asset> Assets { get; set; }
+        public virtual DbSet<Act> Acts { get; set; }
+        public virtual DbSet<Agenda> Agendas { get; set; }
+        public virtual DbSet<Enemy> Enemies { get; set; }
+        public virtual DbSet<Location> Locations { get; set; }
+        public virtual DbSet<Trechery> Trecheries { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
