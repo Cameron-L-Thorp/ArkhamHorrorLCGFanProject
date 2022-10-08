@@ -12,7 +12,17 @@ namespace AHLCGApp.EF.CRUD
     {
         public void AddOrUpdateAgenda(Agenda agenda)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                if(AgendaExists(agenda.Id))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public bool AgendaExists(int id)
@@ -27,12 +37,18 @@ namespace AHLCGApp.EF.CRUD
 
         public void DeleteAgenda(Agenda agenda)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void DeleteAgenda(int id)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void GetAllAgendas()

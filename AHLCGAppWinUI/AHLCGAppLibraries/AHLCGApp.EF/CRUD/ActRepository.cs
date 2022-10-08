@@ -22,17 +22,33 @@ namespace AHLCGApp.EF.CRUD
 
         public void AddOrUpdateAct(Act act)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                if (ActExists(act.Id))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public void DeleteAct(Act act)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void DeleteAct(int id)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void GetAllActs()

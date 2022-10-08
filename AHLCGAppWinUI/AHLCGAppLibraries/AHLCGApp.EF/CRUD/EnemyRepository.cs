@@ -12,17 +12,33 @@ namespace AHLCGApp.EF.CRUD
     {
         public void AddOrUpdateEnemy(Enemy enemy)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+                if (EnemyExists(enemy.Id))
+                {
+
+                }
+                else
+                {
+
+                }
+            }
         }
 
         public void DeleteEnemy(Enemy enemy)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public void DeleteEnemy(int id)
         {
-            throw new NotImplementedException();
+            using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
+            {
+
+            }
         }
 
         public bool EnemyExists(int id)
