@@ -14,7 +14,7 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-                List<Asset> allInvestigators = context.Assets.ToList();
+                List<Asset> allAssets = context.Assets.ToList();
             }
         }
 
