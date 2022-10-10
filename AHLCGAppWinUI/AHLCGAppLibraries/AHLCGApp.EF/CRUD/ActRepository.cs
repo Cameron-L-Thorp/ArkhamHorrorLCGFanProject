@@ -26,12 +26,15 @@ namespace AHLCGApp.EF.CRUD
             {
                 if (ActExists(act.Id))
                 {
-
+                    Act a = context.Acts.Where(i => i.Id == act.Id).SingleOrDefault();
+                    context.Update(act);
                 }
                 else
                 {
-
+                    Act newAct = act;
+                    context.Add(newAct);
                 }
+                context.SaveChanges();
             }
         }
 
@@ -39,7 +42,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Act delAct = context.Acts.Where(i => i.Id == act.Id).SingleOrDefault();
+                int id = delAct.Id;
+                DeleteAct(id);
             }
         }
 
@@ -47,7 +52,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Act cyaAct = context.Acts.Where(i => i.Id == id).SingleOrDefault();
+                context.Remove(cyaAct);
+                context.SaveChanges();
             }
         }
 

@@ -16,20 +16,25 @@ namespace AHLCGApp.EF.CRUD
             {
                 if (LocationExists(location.Id))
                 {
-
+                    Location loc = context.Locations.Where(i => i.Id == location.Id).SingleOrDefault();
+                    context.Update(loc);
                 }
                 else
                 {
-
+                    Location newLocation = location;
+                    context.Add(newLocation);
                 }
+                context.SaveChanges();
             }
         }
 
-        public void DeleteLocation(Location locaiton)
+        public void DeleteLocation(Location location)
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Location loc = context.Locations.Where(i => i.Id == location.Id).SingleOrDefault();
+                int id = loc.Id;
+                DeleteLocation(id);
             }
         }
 
@@ -37,7 +42,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Location cyaLoc = context.Locations.Where(i => i.Id == id).SingleOrDefault();
+                context.Remove(cyaLoc);
+                context.SaveChanges();
             }
         }
 

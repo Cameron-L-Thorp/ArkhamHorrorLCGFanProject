@@ -16,12 +16,15 @@ namespace AHLCGApp.EF.CRUD
             {
                 if (EnemyExists(enemy.Id))
                 {
-
+                    Enemy en = context.Enemies.Where(i => i.Id == enemy.Id).SingleOrDefault();
+                    context.Update(en);
                 }
                 else
                 {
-
+                    Enemy newEnemy = enemy;
+                    context.Add(newEnemy);
                 }
+                context.SaveChanges();
             }
         }
 
@@ -29,7 +32,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Enemy en = context.Enemies.Where(i => i.Id == enemy.Id).SingleOrDefault();
+                int id = en.Id;
+                DeleteEnemy(id);
             }
         }
 
@@ -37,7 +42,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Enemy cyaEnemy = context.Enemies.Where(i => i.Id == id).SingleOrDefault();
+                context.Remove(cyaEnemy);
+                context.SaveChanges();
             }
         }
 

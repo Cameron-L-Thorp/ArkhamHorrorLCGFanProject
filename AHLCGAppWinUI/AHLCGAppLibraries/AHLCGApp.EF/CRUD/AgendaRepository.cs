@@ -16,12 +16,15 @@ namespace AHLCGApp.EF.CRUD
             {
                 if(AgendaExists(agenda.Id))
                 {
-
+                    Agenda ag = context.Agendas.Where(i => i.Id == agenda.Id).FirstOrDefault();
+                    context.Update(agenda);
                 }
                 else
                 {
-
+                    Agenda newAgenda = agenda;
+                    context.Add(newAgenda);
                 }
+                context.SaveChanges();
             }
         }
 
@@ -39,7 +42,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Agenda ag = context.Agendas.Where(i => i.Id == agenda.Id).SingleOrDefault();
+                int id = ag.Id;
+                DeleteAgenda(id);
             }
         }
 
@@ -47,7 +52,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Agenda cyaAgenda = context.Agendas.Where(i => i.Id == id).SingleOrDefault();
+                context.Remove(cyaAgenda);
+                context.SaveChanges();
             }
         }
 
