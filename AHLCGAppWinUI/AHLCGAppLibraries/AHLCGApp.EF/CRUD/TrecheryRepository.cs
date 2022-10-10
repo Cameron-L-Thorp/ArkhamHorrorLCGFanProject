@@ -16,12 +16,15 @@ namespace AHLCGApp.EF.CRUD
             {
                 if (TrecheryExists(trechery.Id))
                 {
-
+                    Trechery trech = context.Trecheries.Where(i => i.Id == trechery.Id).SingleOrDefault();
+                    context.Update(trech);
                 }
                 else
                 {
-
+                    Trechery newTrechery = trechery;
+                    context.Add(newTrechery);
                 }
+                context.SaveChanges();
             }
         }
 
@@ -29,7 +32,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Trechery trech = context.Trecheries.Where(i => i.Id == trechery.Id).SingleOrDefault();
+                int id = trech.Id;
+                DeleteTrechery(id);
             }
         }
 
@@ -37,7 +42,9 @@ namespace AHLCGApp.EF.CRUD
         {
             using (AHLCGDBContext context = new AHLCGDBContext(new DbContextOptions<AHLCGDBContext>()))
             {
-
+                Trechery cyaTrech = context.Trecheries.Where(i => i.Id == id).SingleOrDefault();
+                context.Remove(cyaTrech);
+                context.SaveChanges();
             }
         }
 
